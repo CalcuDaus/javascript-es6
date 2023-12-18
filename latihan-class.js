@@ -6,7 +6,6 @@ class Kendaraan {
     this.jenis = jenis;
     this.Menyala = false;
   }
-
   mesinMenyala() {
     console.log(
       `Mesin Kendaraan ${this.jenis} dengan plat nomor ${this.nomorKendaraan} Menyala!!!`
@@ -136,3 +135,5 @@ heliDaus.info();
 pesawatDaus.info();
 
 BengkelSerbaBisa.perbaiki([heliDaus]);
+
+
