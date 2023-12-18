@@ -137,3 +137,55 @@ pesawatDaus.info();
 BengkelSerbaBisa.perbaiki([heliDaus]);
 
 
+
+// latihan class hewan 
+
+class Hewan {
+  constructor(warna,nama){
+    this.nama = nama;
+    this.warna = warna
+    this.tidur = true;
+  }
+
+  beraktivitas(){
+    console.log(`Hewan ${this.nama} Beraktivitas`);
+    this.tidur = false;
+  }
+  
+  info(){
+    console.log(`Hewan : ${this.nama}`);
+    console.log(`Warna : ${this.warna}`);
+    console.log(`Aktivitas : ${this.tidur ? "Sedang Tidur" : "Sedang Beraktivitas"} `)
+  }
+}
+
+class HewanDarat extends Hewan {
+  constructor(warna,nama,jlhKaki,peliharaan){
+    super(nama,warna);
+    this.jlhKaki = jlhKaki;
+    this.peliharaan = peliharaan;
+  }
+
+  info(){
+    super.info();
+    console.log(`Jumlah Kaki : ${this.jlhKaki}`);
+    console.log(`Hewan Peliharaan : ${this.peliharaan ? "Iya" : "Bukan"}`)
+  }
+}
+
+class HewanAir extends Hewan {
+  constructor(warna,nama,peliharaan){
+    super(nama,warna);
+    this.peliharaan = peliharaan;
+  }
+  info(){
+    super.info();
+    console.log(`Hewan Peliharaan : ${this.peliharaan ? "Iya" : "Bukan"}`)
+  }
+}
+
+
+const kucingDaus = new HewanDarat("Kuning","Kucing",4,true);
+
+kucingDaus.beraktivitas()
+kucingDaus.info()

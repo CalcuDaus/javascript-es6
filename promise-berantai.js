@@ -46,7 +46,7 @@ const reserveACoffe = (type, miligrams) => {
     .catch((reject) => console.log(reject));
 };
 
-reserveACoffe("arabica", 10);
+// reserveACoffe("arabica", 10);
 
 
 
@@ -78,7 +78,7 @@ const ambilBahan = (topping,jumlah) => {
 
 const masakPizza = () => {
     return new Promise((resolve,reject) => {
-        if(isOvenReady){
+        if(bahan.isOvenReady){
             resolve("Pizza Sedang Di panggang !")
         }else{
             reject("Oven Sedang rusak !")
@@ -86,4 +86,20 @@ const masakPizza = () => {
     })
 }
 
-const berikanKePelanggan = ()
+const berikanKePelanggan = () => {
+  return new Promise((resolve,reject)=>{
+    resolve("Pizza Siap Disantap !");
+  })
+}
+
+
+const reserveAPizza = (topping,jumlah)=>{
+  ambilBahan(topping,jumlah)
+  .then(masakPizza)
+  .then(berikanKePelanggan)
+  .then(result => console.log(result))
+  .catch(reject => console.log(reject))
+}
+
+
+reserveAPizza("tomat",2);
