@@ -25,3 +25,12 @@ const getCoffe = () => {
 
 
 getCoffe();
+
+// contoh penggunaan async dan await
+
+async function getCoffe2(){
+    const coffe = await makeCoffe();
+    console.log(coffe);
+}
+
+getCoffe2();
